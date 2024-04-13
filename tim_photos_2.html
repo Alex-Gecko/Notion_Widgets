@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguetteBox.js/1.8.1/baguetteBox.min.css">
+  <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
+
+  <style>
+    .tz-gallery {
+      padding: 40px;
+    }
+
+    .tz-gallery .thumbnail {
+      padding: 0;
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 4px;
+      border: none;
+      transition: 0.15s ease-in-out;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .tz-gallery .thumbnail:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .baguetteBox-button {
+      background-color: transparent !important;
+    }
+
+    .carousel-inner>.item>a>img,
+    .carousel-inner>.item>img,
+    .img-responsive,
+    .thumbnail a>img,
+    .thumbnail>img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    :fullscreen {
+      width: 100%;
+      height: auto;
+    }
+
+    :fullscreen img {
+      width: auto;
+      height: 100%;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="gallery">
+      <div class="gallery-container container">
+        <div class="tz-gallery">
+          <div class="row">
+            <!-- Loop through these divs for each image, updating the href and src attributes -->
+            <!-- Images Section -->
+            <div data-aos="flip-up" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM1.JPEG">
+                  <img src="TM1.JPEG">
+                </a>
+              </div>
+            </div>
+
+                        <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="20" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM2.JPEG">
+                  <img src="TM2.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="40" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM3.JPEG">
+                  <img src="TM3.JPEG">
+                </a>
+
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="60" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM4.JPEG">
+                  <img src="TM4.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="80" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM5.JPEG">
+                  <img src="TM5.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="100" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM6.JPEG">
+                  <img src="TM6.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="120" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM7.JPEG">
+                  <img src="TM7.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="140" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM8.JPEG">
+                  <img src="TM8.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM9.JPEG">
+                  <img src="TM9.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM10.JPEG">
+                  <img src="TM10.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM11.JPEG">
+                  <img src="TM11.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+
+
+            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <a class="lightbox" href="TM12.JPEG">
+                  <img src="TM12.JPEG">
+                </a>
+              </div>
+            </div>
+            <!---------------------------------------------->
+            <!-- Repeat above div for each image -->
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguetteBox.js/1.8.1/baguetteBox.min.js"></script>
+      <script>
+        baguetteBox.run('.tz-gallery', {
+          onChange: function(currentIndex, imagesCount, DOMElement) {
+            var imgElement = DOMElement.querySelector('img');
+            imgElement.onclick = function() {
+              if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                  document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
+                }
+              } else {
+                // Enter fullscreen
+                if (imgElement.requestFullscreen) {
+                  imgElement.requestFullscreen();
+                } else if (imgElement.mozRequestFullScreen) {
+                  imgElement.mozRequestFullScreen();
+                } else if (imgElement.webkitRequestFullscreen) {
+                  imgElement.webkitRequestFullscreen();
+                }
+              }
+            }
+          }
+        });
+      </script>
+    </section>
+  </main>
+</body>
+</html>
