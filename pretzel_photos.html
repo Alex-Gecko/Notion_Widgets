@@ -30,7 +30,6 @@
       background-color: transparent !important;
     }
 
-
     .carousel-inner>.item>a>img,
     .carousel-inner>.item>img,
     .img-responsive,
@@ -46,133 +45,55 @@
 
 <body>
 
-
   <main>
-
-
     <section id="gallery">
-      <div class=" gallery-container container">
-        <div class="tz-gallery">
-
-          <div class="row">
-
-            <!---------------------------------------------->
-            <div data-aos="flip-up" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="1.jpg">
-                  <img src="1.jpg">
-                </a>
-              </div>
-            </div>
-
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="20" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="2.JPG">
-                  <img src="2.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="40" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="3.JPG">
-                  <img src="3.JPG">
-                </a>
-
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="60" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="4.jpg">
-                  <img src="4.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="80" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="5.jpg">
-                  <img src="5.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="100" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="6.jpg">
-                  <img src="6.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="120" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="7.JPG">
-                  <img src="7.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="140" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="8.jpg">
-                  <img src="8.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="9.JPG">
-                  <img src="9.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="10.JPG">
-                  <img src="10.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="160" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="11.jpeg">
-                  <img src="11.jpeg">
-                </a>
-              </div>
-            </div>
-
-
-
-
-          </div>
+      <div class="gallery-container container">
+        <div id="image-gallery" class="tz-gallery row">
+          <!-- Images will be inserted dynamically here -->
         </div>
       </div>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-      <script>
-        baguetteBox.run('.tz-gallery');
-      </script>
-
     </section>
-
-
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const images = [
+        'Pr1.jpg', 'Pr2.JPG', 'Pr3.jpg', 'Pr4.jpg', 'Pr5.jpg', 
+        'Pr6.jpg', 'Pr7.JPG', 'Pr8.jpg', 'Pr9.JPG', 'Pr10.JPG', 'Pr11.jpeg', 'DSC00029.JPG', 'IMG_0151.jpeg', 'IMG_1021-COLLAGE.jpg', 'IMG_1038.JPG', 'IMG_1209.jpg', 
+        'IMG_8467.jpg', 'IMG_8515.jpg', 'IMG_8524.jpg', 'IMG_9205.JPG', 'IMG_9207.jpg', 
+        'P1010536.jpeg'
+      ];
+
+
+      const imageGallery = document.getElementById('image-gallery');
+
+      images.forEach((image) => {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-sm-6 col-md-4';
+        colDiv.setAttribute('data-aos', 'flip-up');
+
+        const thumbDiv = document.createElement('div');
+        thumbDiv.className = 'thumbnail';
+
+        const anchor = document.createElement('a');
+        anchor.className = 'lightbox';
+        anchor.href = image;
+
+        const img = document.createElement('img');
+        img.src = image;
+
+        anchor.appendChild(img);
+        thumbDiv.appendChild(anchor);
+        colDiv.appendChild(thumbDiv);
+
+        imageGallery.appendChild(colDiv);
+      });
+
+      baguetteBox.run('.tz-gallery');
+    });
+  </script>
+
+</body>
 
 </html>
