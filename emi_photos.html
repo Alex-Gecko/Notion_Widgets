@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+  <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
+
+  <style>
+    .tz-gallery {
+      padding: 40px;
+    }
+
+    .tz-gallery .thumbnail {
+      padding: 0;
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 4px;
+      border: none;
+      transition: 0.15s ease-in-out;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .tz-gallery .thumbnail:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .baguetteBox-button {
+      background-color: transparent !important;
+    }
+
+    .carousel-inner>.item>a>img,
+    .carousel-inner>.item>img,
+    .img-responsive,
+    .thumbnail a>img,
+    .thumbnail>img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main>
+    <section id="gallery">
+      <div class="gallery-container container">
+        <div id="image-gallery" class="tz-gallery row">
+          <!-- Images will be inserted dynamically here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const images = [
+        '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.png',
+        '20190414_143327.jpg', '20190414_144842.jpg', '20200822_183715-01.jpeg', '20200827_150314.jpg',
+        '20210831_220721.jpg', '20211211_201219.jpg', 'GPTempDownload.jpg', 'IMG_0702.jpg', 'IMG_2241.jpg',
+        'IMG_2709.jpg', 'IMG_3596.jpg', 'IMG_3913.jpg', 'IMG_5565-ANIMATION.gif', 'IMG_5585.jpg',
+        'IMG_5601.jpg', 'IMG_5665.jpg', 'IMG_5690.jpg', 'IMG_5704.jpg', 'IMG_5926.jpg', 'IMG_8229.jpg',
+        'IMG_8306.jpg', 'IMG_8396.jpg', 'IMG_8426.jpg', 'IMG_8445.jpg', 'IMG_8507.jpg', 'IMG_8630-01.jpeg',
+        'IMG_9885.jpg', 'IMG_20181003_140049.jpg', 'SCR-20240413-nweq.jpeg', 'SCR-20240413-nyde.png'
+      ];
+
+      const imageGallery = document.getElementById('image-gallery');
+
+      images.forEach((image) => {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-sm-6 col-md-4';
+        colDiv.setAttribute('data-aos', 'flip-up');
+
+        const thumbDiv = document.createElement('div');
+        thumbDiv.className = 'thumbnail';
+
+        const anchor = document.createElement('a');
+        anchor.className = 'lightbox';
+        anchor.href = image;
+
+        const img = document.createElement('img');
+        img.src = image;
+
+        anchor.appendChild(img);
+        thumbDiv.appendChild(anchor);
+        colDiv.appendChild(thumbDiv);
+
+        imageGallery.appendChild(colDiv);
+      });
+
+      baguetteBox.run('.tz-gallery');
+    });
+  </script>
+
+</body>
+
+</html>
