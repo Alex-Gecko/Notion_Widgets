@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
-
   <style>
     .tz-gallery {
       padding: 40px;
     }
-
     .tz-gallery .thumbnail {
       padding: 0;
       margin-bottom: 30px;
@@ -21,16 +18,12 @@
       transition: 0.15s ease-in-out;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
     }
-
     .tz-gallery .thumbnail:hover {
       transform: translateY(-10px) scale(1.02);
     }
-
     .baguetteBox-button {
       background-color: transparent !important;
     }
-
-
     .carousel-inner>.item>a>img,
     .carousel-inner>.item>img,
     .img-responsive,
@@ -41,108 +34,73 @@
       height: auto;
     }
   </style>
-
 </head>
-
 <body>
-
-
   <main>
-
-
     <section id="gallery">
-      <div class=" gallery-container container">
-        <div class="tz-gallery">
-
-          <div class="row">
-
-            <!---------------------------------------------->
-            <div data-aos="flip-up" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O1.jpg">
-                  <img src="O1.jpg">
-                </a>
-              </div>
-            </div>
-
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="20" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O2.jpg">
-                  <img src="O2.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="40" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O3.JPG">
-                  <img src="O3.JPG">
-                </a>
-
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="60" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O4.JPG">
-                  <img src="O4.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="80" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O5.jpg">
-                  <img src="O5.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="100" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O6.JPG">
-                  <img src="O6.JPG">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="120" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O7.jpg">
-                  <img src="O7.jpg">
-                </a>
-              </div>
-            </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="140" class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="O8.JPG">
-                  <img src="O8.JPG">
-                </a>
-              </div>
-            </div>
-
-          </div>
+      <div class="gallery-container container">
+        <div id="image-gallery" class="tz-gallery row">
+          <!-- Images will be inserted dynamically here -->
         </div>
       </div>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-      <script>
-        baguetteBox.run('.tz-gallery');
-      </script>
-
     </section>
-
-
   </main>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+          const images = [
+          '01.jpg',
+          '02.jpg',
+          '03.JPG',
+          '04.JPG',
+          '05.jpg',
+          '06.JPG',
+          '07.jpg',
+          '08.JPG',
+          'C900001.jpg',
+          '0900002.jpg',
+          '0900003.jpg',
+          '0900004.jpg',
+          '0900005.jpg',
+          '0900006.jpg',
+          '0900007.jpg',
+          '0900008.jpg',
+          '0900009.jpg',
+          '0900010.jpg',
+          '0900011.jpg',
+          '0900012.jpg',
+          '0900013.jpg',
+          '0900015.jpg',
+          '0900016.jpg',
+          '0900017.jpg',
+          '0900018.jpg',
+          '0900019.jpg',
+          '0900020.jpg',
+          '0900021.jpg',
+          '0900022.jpg',
+          '0900023.jpg',
+          '0900024.jpg',
+          '0900025.jpg'
+          ];
+      const imageGallery = document.getElementById('image-gallery');
+      images.forEach((image) => {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-sm-6 col-md-4';
+        colDiv.setAttribute('data-aos', 'flip-up');
+        const thumbDiv = document.createElement('div');
+        thumbDiv.className = 'thumbnail';
+        const anchor = document.createElement('a');
+        anchor.className = 'lightbox';
+        anchor.href = image;
+        const img = document.createElement('img');
+        img.src = image;
+        anchor.appendChild(img);
+        thumbDiv.appendChild(anchor);
+        colDiv.appendChild(thumbDiv);
+        imageGallery.appendChild(colDiv);
+      });
+      baguetteBox.run('.tz-gallery');
+    });
+  </script>
+</body>
 </html>
